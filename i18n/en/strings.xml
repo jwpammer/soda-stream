@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<string name="tab_title_soda">Soda</string>
+	<string name="win_title_soda_home">Soda Home</string>
+	<string name="win_title_soda_repositories">Soda Repositories</string>
+	<string name="win_title_soda_views">Soda Views</string>
+	<string name="win_title_soda_view_details">Soda View Details</string>
+	<string name="win_title_soda_view_columns">Soda View Columns</string>
+	<string name="win_title_soda_view_column_details">Soda View Column Details</string>
+	<string name="win_title_soda_view_column_detail_top_items">Soda View Column Detail Top Items</string>
+	<string name="win_title_soda_view_rows">Soda View Rows</string>
+	<string name="win_title_soda_view_row_details">Soda View Row Details</string>	
+</resources>

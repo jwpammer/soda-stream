@@ -1,0 +1,21 @@
+exports = function(rowDetail, viewColumns) {
+	var self = UiFactory.createWindow(L('win_title_soda_view_row_details'));
+	self.layout = "vertical";	
+	
+	var rowDetailRowData = [];
+	
+	for (var key in rowDetail) {
+		rowDetailRowData.push(
+			Ti.UI.createTableViewRow({
+				title: SodaCore.getColumnName(key, viewColumns) + ' / ' + rowDetail[key].toString()
+			})
+		);
+	}
+
+	var tblViewRowDetails = UiFactory.createTableView(rowDetailRowData);
+	
+	self.add(tblViewRowDetails)
+	
+	return self;
+};
+

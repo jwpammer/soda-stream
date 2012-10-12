@@ -1,0 +1,6 @@
+.svn/
+.settings/
+tmp/
+build/
+.project
+*.log
