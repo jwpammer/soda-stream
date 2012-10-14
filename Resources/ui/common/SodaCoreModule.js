@@ -238,8 +238,8 @@ function buildUrl(repository, resource, method, start, length) {
 	var url = 'http://'+repository+'/api/'+resource+'.'+dataFormat+'?x=x'
 	
 	if (method != null) { url = url + '&method=' + method; }
-	if (start != null)  { url = url + '&start=' + start;	}
-	if (length != null) {	url = url + '&length= '+ length; }
+	if (start != null)  { url = url + '&start='  + start;	}
+	if (length != null) {	url = url + '&length=' + length; }
 	
 	return url;
 };

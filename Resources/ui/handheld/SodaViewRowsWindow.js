@@ -10,7 +10,8 @@ exports = function(repository, viewId, viewColumns, submittedFilters) {
 			rowRowData.push(
 				Ti.UI.createTableViewRow({
 					id: rowItem.id,
-			   	title: rowItem.id
+			   	title: rowItem.id,
+			   	idx: i
 		  	})
 		  );
 		}
@@ -19,9 +20,9 @@ exports = function(repository, viewId, viewColumns, submittedFilters) {
 
 		tblRows.addEventListener('click', 
 			function(event) {
-				var id = event.id;
+				var idx = event.rowData.idx;
 				var SodaViewRowDetailsWindow = require('ui/handheld/SodaViewRowDetailsWindow');
-				var win = new SodaViewRowDetailsWindow(rows[id], viewColumns);
+				var win = new SodaViewRowDetailsWindow(rows[idx], viewColumns);
 				win.containingTab = self.containingTab;
 				self.containingTab.open(win);
 			}
@@ -31,7 +32,7 @@ exports = function(repository, viewId, viewColumns, submittedFilters) {
 
 		// Helper function to automatically select a particular row. Useful for simulating.
 		self.selectRow = function() {
-			 tblRows.fireEvent('click', {id: 0});
+			 tblRows.fireEvent('click', {rowData: {idx: 0}});
 		}	
 		
 		// Simulate user row selection.
@@ -50,7 +51,7 @@ exports = function(repository, viewId, viewColumns, submittedFilters) {
 		if (filterValue !== "") {
 			// Ti.API.info('Column ID: ' + columnId + '; Filter value: ' + filterValue);
 			var filterField = {
-				operator: SodaCore.RowFilterOperators.EQUALS,
+				operator: SodaCore.RowFilterOperators.NOT_EQUALS,
 				columnId: columnId,
 				value: filterValue
 			};
