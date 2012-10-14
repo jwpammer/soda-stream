@@ -1,3 +1,5 @@
+/** SODA view column detail top items window. Lists the top items for the selected column. **/
+
 exports = function(topItems) {
 	var self = UiFactory.createWindow(L('win_title_soda_view_column_detail_topItems'));
 	self.layout = "vertical";	

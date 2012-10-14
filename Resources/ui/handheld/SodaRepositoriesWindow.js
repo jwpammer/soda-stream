@@ -1,7 +1,9 @@
+/** SODA repositories window. Lists all defined repositories. **/
 exports = function() {
 	var self = UiFactory.createWindow(L('win_title_soda_repositories'));
 	self.layout = "vertical";
 	
+	// Add repositories here.
 	var repositoryRowData = [
 		{title:'City of Chicago', repository: 'data.cityofchicago.org', hasChild:true}
 	];

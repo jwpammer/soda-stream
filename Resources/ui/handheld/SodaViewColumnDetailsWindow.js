@@ -1,3 +1,5 @@
+/** SODA view column details window. Lists all the details for the selected column. **/
+
 exports = function(columnDetail) {
 	var self = UiFactory.createWindow(L('win_title_soda_view_column_details'));
 	self.layout = "vertical";	

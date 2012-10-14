@@ -1,3 +1,5 @@
+/** File helper utility to reading and writing files. **/
+
 // Write the contents to a temp file. Useful for capturing XHR results.
 exports.writeToFile = function(name, contents) {
   var tmpDataDir = Titanium.Filesystem.getFile(Titanium.Filesystem.tempDirectory, 'Data');

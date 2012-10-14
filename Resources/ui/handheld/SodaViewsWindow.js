@@ -1,3 +1,5 @@
+/** SODA views window. Lists all views for the selected repository. **/
+
 exports = function(repository) {
 	var self = UiFactory.createWindow(L('win_title_soda_views'));
 	self.layout = "vertical";	
@@ -39,7 +41,7 @@ exports = function(repository) {
 		// Simulate user row selection.
 		if (AppProps.simulate.user) {
 			setTimeout(function() { self.selectRow(); }, AppProps.simulate.userDelayTime);
-		}	
+		}
 	}
 	
 	SodaCore.fetchViews(repository, sodaOnloadCallback, null);		

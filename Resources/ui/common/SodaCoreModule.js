@@ -1,3 +1,5 @@
+/** SODA (Socrata Open Data API) core module that facilitates communications with SODA repositories. **/
+
 var xAppToken = 'P1fAvDdVLQ8qlmftB8Fuy5C05';
 var contentType = "application/json; charset=utf-8";
 var dataFormat = 'json'

@@ -1,7 +1,7 @@
-/** Facade layer built on top of the SODA core module that adds specific functionality for the Crime Map view. **/
+/** Facade layer built on top of the SODA core module that adds specific functionality for the Food Inspections view. **/
 
 // Column field names for Crime Reports
-AppProps.sodaMetadata.crimeMaps = {
+AppProps.sodaMetadata.foodInspections = {
 	columnFieldNames: {
 		CASE_NUMBER: 'case_',
 		DATE_OR_OCCURRENCE: 'date_of_occurrence',

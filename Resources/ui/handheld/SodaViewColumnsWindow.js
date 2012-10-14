@@ -1,3 +1,5 @@
+/** SODA view column window. Lists all columns for the selected view. **/
+
 exports = function(columns) {
 	var self = UiFactory.createWindow(L('win_title_soda_view_column_details'));
 	self.layout = "vertical";	

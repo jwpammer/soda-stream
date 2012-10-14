@@ -1,3 +1,5 @@
+/** Place holder for a tabbed application. **/
+
 exports = function ApplicationTabGroup(Window) {
 	var self = UiFactory.createTabGroup();
 	

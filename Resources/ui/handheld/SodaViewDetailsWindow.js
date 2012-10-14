@@ -1,3 +1,5 @@
+/** SODA view details window. Lists all the details for the selected view. **/
+
 exports = function(repository, viewId) {
 	var self = UiFactory.createWindow(L('win_title_soda_view_details'));
 	self.layout = "vertical";

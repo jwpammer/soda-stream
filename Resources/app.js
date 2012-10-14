@@ -9,19 +9,21 @@ Forms = require('lib/forms');
 
 // Global application properties.
 var AppProps = {
-	debugMode: true,
+	// Place holder property for SODA metadata
 	sodaMetadata: {
-		crimeData: {}
+		crimeMaps: {},										// Place holder property for Crime Map SODA metadata
+		foodInspections: {}								// Place holder property for Food Inspections SODA metadata
 	},
+	// Provides a method to simulate user interactions and XHR responses for offline mode and expedited testing
 	simulate: {
-		user: true,
-		userDelayTime: 300,
-		// view: 'dfnk-7re6',
-		view: '4ijn-s7e5',
-		xhrResponse: true,
-		captureXhrResponseAsFile: false,
-		data: {
-			soda: {}
+		user: false,											// Simulate user interactions
+		userDelayTime: 300,								// Delay between simulated user interactions
+		// view: 'dfnk-7re6',							// Simulate Crime Map view ID
+		view: '4ijn-s7e5',								// Simulate Food Inspections view ID
+		xhrResponse: false,								// Simulate XHR responses - see simulation_data folder
+		captureXhrResponseAsFile: false,  // Capture a XHR response, then turn it into simulation data
+		data: {														// Place holder property used for simulation data
+			soda: {}												// Place holder property used for SODA simulation data
 		}
 	}
 };

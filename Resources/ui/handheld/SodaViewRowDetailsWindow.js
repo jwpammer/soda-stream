@@ -1,3 +1,5 @@
+/** SODA view row details window. Lists all the details for the selected row. **/
+
 exports = function(rowDetail, viewColumns) {
 	var self = UiFactory.createWindow(L('win_title_soda_view_row_details'));
 	self.layout = "vertical";	

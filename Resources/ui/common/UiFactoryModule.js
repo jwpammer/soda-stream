@@ -1,4 +1,5 @@
-// UI factory to allow customization of UI elements - placeholder at the moment...
+/** UI factory to allow customization of UI elements - place holder at the moment... **/
+
 exports.createWindow = function(title) {
 	var self = Ti.UI.createWindow({
 		title: title,

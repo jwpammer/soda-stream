@@ -1,3 +1,5 @@
+/** SODA view column filters window. Provides an entry form for defining filter criteria for view rows. **/
+
 exports = function(repository, viewId, viewColumns) {
 	var self = UiFactory.createWindow(L('win_title_soda_view_columns'));
 	self.layout = 'vertical';
