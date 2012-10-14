@@ -196,7 +196,8 @@ function createBasicFilterCondition(rowFilterOperator, columnId, filterValue) {
 };
 exports.createBasicFilterCondition = createBasicFilterCondition;
 
-function getColumnName(columnId, viewColumns) {
+// Given a column ID, decode the column name
+function decodeColumnName(columnId, viewColumns) {
 	for (var key in viewColumns) {
 		var viewColumn = viewColumns[key];
 		if (viewColumn.id == columnId) {
@@ -205,9 +206,10 @@ function getColumnName(columnId, viewColumns) {
 	}	
 	return columnId;
 };
-exports.getColumnName = getColumnName;
+exports.decodeColumnName = decodeColumnName;
 
-function getColumnId(fieldName, viewColumns) {
+// Given a column field name, decode the column ID
+function decodeColumnId(fieldName, viewColumns) {
 	for (var key in viewColumns) {
 		var viewColumn = viewColumns[key];
 		if (viewColumn.fieldName == fieldName) {
@@ -216,7 +218,7 @@ function getColumnId(fieldName, viewColumns) {
 	}	
 	return null;
 };
-exports.getColumnId = getColumnId;
+exports.decodeColumnId = decodeColumnId;
 
 function getRowValue(columnId, row) {
 	for (var key in row) {

@@ -1,6 +1,6 @@
 /** Facade layer built on top of the SODA core module that adds specific functionality for the Crime Map view. **/
 
-// Column field names for Crime Reports
+// Column field names for Crime Maps
 AppProps.sodaMetadata.crimeMaps = {
 	columnFieldNames: {
 		CASE_NUMBER: 'case_',

@@ -9,7 +9,7 @@ exports = function(rowDetail, viewColumns) {
 	for (var key in rowDetail) {
 		rowDetailRowData.push(
 			Ti.UI.createTableViewRow({
-				title: SodaCore.getColumnName(key, viewColumns) + ' / ' + rowDetail[key].toString()
+				title: SodaCore.decodeColumnName(key, viewColumns) + ' / ' + rowDetail[key].toString()
 			})
 		);
 	}

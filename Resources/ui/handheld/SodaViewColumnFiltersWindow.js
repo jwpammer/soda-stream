@@ -4,6 +4,8 @@ exports = function(repository, viewId, viewColumns) {
 	var self = UiFactory.createWindow(L('win_title_soda_view_columns'));
 	self.layout = 'vertical';
 	
+	SodaCore.printViewColumnFieldNames(viewColumns)
+	
 	var lblViewColumns = Ti.UI.createLabel({
 		text: "View Columns"
 	});
