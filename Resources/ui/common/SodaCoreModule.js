@@ -3,7 +3,7 @@
 var FileHelper = require('ui/common/FileHelperModule')
 
 var xAppToken = 'P1fAvDdVLQ8qlmftB8Fuy5C05';
-var contentType = "application/json; charset=utf-8";
+var contentType = 'application/json; charset=utf-8';
 var dataFormat = 'json'
 
 var QueryFilterOperations = {
@@ -37,7 +37,7 @@ exports.fetchViews = function(repository, onloadCallback, onerrorCallback) {
 		Ti.include('simulation_data/soda/views.js');
 		onloadCallback(AppProps.simulate.data.soda.views);
 	} else {
-		send(url, "GET", null, onloadCallback, onerrorCallback);
+		send(url, 'GET', null, onloadCallback, onerrorCallback);
 	}
 };
 
@@ -49,7 +49,7 @@ exports.fetchViewDetails = function(repository, viewId, onloadCallback, onerrorC
 		Ti.include('simulation_data/soda/view_details/'+AppProps.simulate.view+'.js');
 		onloadCallback(AppProps.simulate.data.soda.view_details);
 	} else {
-		send(url, "GET", null, onloadCallback, onerrorCallback);
+		send(url, 'GET', null, onloadCallback, onerrorCallback);
 	}
 };
 
@@ -65,7 +65,6 @@ exports.fetchViewRows = function(repository, viewId, start, length, filterFields
 		Ti.include('simulation_data/soda/view_rows/'+AppProps.simulate.view+'.js');
 		onloadCallback(AppProps.simulate.data.soda.view_rows);
 	} else {
-		// TODO: Test this.
 		send(url, 'POST', JSON.stringify(queryFilter), onloadCallback, onerrorCallback);
 	}
 };
@@ -224,8 +223,8 @@ function send(url, method, payload, onloadCallback, onerrorCallback) {
 	});
  
 	xhr.open(method, url);
-	xhr.setRequestHeader("Content-Type", contentType);
-	xhr.setRequestHeader("X-App-Token", xAppToken);
+	xhr.setRequestHeader('Content-Type', contentType);
+	xhr.setRequestHeader('X-App-Token', xAppToken);
 	if (payload) {
 		xhr.send(payload);
 	} else {
