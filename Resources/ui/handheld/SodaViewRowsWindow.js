@@ -53,7 +53,7 @@ exports = function(repository, viewId, viewColumns, submittedFilters) {
 		if (filterValue !== "") {
 			// Ti.API.info('Column ID: ' + columnId + '; Filter value: ' + filterValue);
 			var filterField = {
-				operator: SodaCore.RowFilterOperators.NOT_EQUALS,
+				operator: SodaCore.RowFilterOperators.EQUALS,
 				columnId: columnId,
 				value: filterValue
 			};

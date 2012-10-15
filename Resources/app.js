@@ -9,7 +9,7 @@ Forms = require('lib/forms');
 
 // Global application properties.
 var AppProps = {
-	// Place holder property for SODA metadata
+	// Place holder properties for SODA metadata
 	sodaMetadata: {
 		crimeMaps: {},										// Place holder property for Crime Map SODA metadata
 		foodInspections: {}								// Place holder property for Food Inspections SODA metadata
