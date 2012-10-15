@@ -168,9 +168,9 @@ function createQueryFilter(viewId, queryFilterOperation, filterFields) {
 
 		// Create filter condition based on operator.
 		if (filterField.operator === RowFilterOperators.BETWEEN) {
-			// TODO: Implement between filter.
+			filterCondition = createBetweenFilterCondition(filterField.operator, filterField.columnId, filterField.firstValue, filterField.secondValue);
 		} else if (filterField.operator === RowFilterOperators.WITHIN_CIRCLE) {
-			// TODO: Implement within circle filter.
+			filterCondition = createWithinCircleFilterCondition(filterField.operator, filterField.columnId, filterField.latitude, filterField.longitude, filterField.distance);
 		} else {
 			filterCondition = createBasicFilterCondition(filterField.operator, filterField.columnId, filterField.value);	
 		}
@@ -196,6 +196,37 @@ function createBasicFilterCondition(rowFilterOperator, columnId, filterValue) {
 };
 exports.createBasicFilterCondition = createBasicFilterCondition;
 
+function createWithinCircleFilterCondition(rowFilterOperator, columnId, latitude, longitude, distance /* in meters */) {
+	var filterCondition = {
+		type: 'operator',
+		value: rowFilterOperator,
+		children: [
+			{columnId: columnId, type: 'column'},
+			{type: 'literal', value: latitude},
+			{type: 'literal', value: longitude},
+			{type: 'literal', value: distance}
+		]
+	};
+	// Ti.API.info("Within circle filter condition: " + JSON.stringify(filterCondition));
+	return filterCondition;
+};
+exports.createWithinCircleFilterCondition = createWithinCircleFilterCondition;        
+
+function createBetweenFilterCondition(rowFilterOperator, columnId, firstValue, secondValue) {
+	var filterCondition = {
+		type: 'operator',
+		value: rowFilterOperator,
+		children: [
+			{columnId: columnId, type: 'column'},
+			{type: 'literal', value: firstValue},
+			{type: 'literal', value: secondValue}
+		]
+	};
+	// Ti.API.info("Between filter condition: " + JSON.stringify(filterCondition));
+	return filterCondition;
+};
+exports.createBetweenFilterCondition = createBetweenFilterCondition;   
+          
 // Given a column ID, decode the column name
 function decodeColumnName(columnId, viewColumns) {
 	for (var key in viewColumns) {

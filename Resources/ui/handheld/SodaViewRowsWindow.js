@@ -1,4 +1,4 @@
-/** SODA view rowswindow. List of rows for a view based on filter criteria provided on the SodaViewColumnsFiltersWindow **/
+/** SODA view rows window. List of rows for a view based on filter criteria provided on the SodaViewColumnsFiltersWindow **/
 
 exports = function(repository, viewId, viewColumns, submittedFilters) {
 	var self = UiFactory.createWindow(L('win_title_soda_view_rows'));
