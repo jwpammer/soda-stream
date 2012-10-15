@@ -1,5 +1,7 @@
 /** SODA (Socrata Open Data API) core module that facilitates communications with SODA repositories. **/
 
+var FileHelper = require('ui/common/FileHelperModule')
+
 var xAppToken = 'P1fAvDdVLQ8qlmftB8Fuy5C05';
 var contentType = "application/json; charset=utf-8";
 var dataFormat = 'json'
@@ -26,87 +28,6 @@ var RowFilterOperators = {
 	WITHIN_CIRCLE: 'WITHIN_CIRCLE'
 };
 exports.RowFilterOperators = RowFilterOperators;
-
-/* Example WITHIN_CIRCLE query filter.
-{
-  "originalViewId": "dfnk-7re6",
-  "name": "not used but must be specified",
-  "query": {
-    "filterCondition": {
-      "type": "operator",
-      "value": "AND",
-      "children": [
-        {
-          "type": "operator",
-          "value": "NOT_EQUALS",
-          "children": [
-            {
-              "columnId": 18740457,
-              "type": "column"
-            },
-            {
-              "type": "literal",
-              "value": "abc"
-            }
-          ]
-        },
-        {
-          "type": "operator",
-          "value": "EQUALS",
-          "children": [
-            {
-              "columnId": 18740458,
-              "type": "column"
-            },
-            {
-              "type": "literal",
-              "value": "2012-09-10T00:00:00"
-            }
-          ]
-        },
-        {
-          "type": "operator",
-          "value": "GREATER_THAN",
-          "children": [
-            {
-              "columnId": 18740466,
-              "type": "column"
-            },
-            {
-              "type": "literal",
-              "value": "1"
-            }
-          ]
-        },
-        {
-          "type": "operator",
-          "value": "WITHIN_CIRCLE",
-          "children": [
-            {
-              "columnId": 18740473,
-              "type": "column"
-            },
-            {
-              "type": "literal",
-              "value": "41.8500"
-            },
-            {
-              "type": "literal",
-              "value": "87.6500"
-            },
-            {
-              "type": "literal",
-              "value": "1000"
-            }
-          ]
-        }
-      ]
-    }
-  }
-}
-*/
-
-var FileHelper = require('ui/common/FileHelperModule')
 
 exports.fetchViews = function(repository, onloadCallback, onerrorCallback) {
 	var resource = 'views';
