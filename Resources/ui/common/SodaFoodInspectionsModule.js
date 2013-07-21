@@ -22,3 +22,6 @@ AppProps.sodaMetadata.foodInspections = {
 		LOCATION: 'location',
 	}
 };
+
+var viewId = '4ijn-s7e5';
+
